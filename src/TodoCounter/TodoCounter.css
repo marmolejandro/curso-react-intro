@@ -1,0 +1,11 @@
+h2 {
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+    padding: 48px;
+    font-weight: 400;
+}
+
+h2 span {
+    font-weight: 700;
+}

@@ -1,0 +1,40 @@
+.todo-item-create{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background: #b2c1b3;
+    margin: 4px 0;
+    border-radius: 4px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.input-create-todo{
+    width: 50vw;
+    padding: 0 6px;
+    border: none;
+    border-right: none;
+    height: 24px;
+    border-radius: 6px 0px 0px 6px;
+}
+.input-create-todo:focus{
+    outline: solid #3891e3;
+    outline-offset: -1px;
+    outline-width: 1px;
+}
+
+.todo-item-add{
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    color: aliceblue;
+    font-weight: 800;
+    background: rgb(63 149 85);
+    border-radius: 0px 6px 6px 0px;
+    border: none;
+}
+.todo-item-add:hover{
+    background: rgb(45, 105, 60);
+    cursor: pointer;
+}

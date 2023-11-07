@@ -1,0 +1,44 @@
+.todo-item{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background: #adc8e391;
+    margin: 4px 0;
+    border-radius: 4px;
+    color: #3f3f3f;
+}
+.todo-item:nth-child(even){
+    background: #ffb47fa8;
+}
+
+.todo-item-completed{
+    background: #adc8e3;
+    box-shadow: 0 0 4px 1px #939393 inset;
+    color: black;
+}
+.todo-item-completed:nth-child(even){
+    background: #ffb57f;
+}
+
+.todo-item:hover{
+    box-shadow: 0 0 4px 1px #cacaca;
+    background: #7b9cbd;
+}
+.todo-item:nth-child(even):hover{
+    background: #df9c6c;
+}
+
+.todo-item:first-child{
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.todo-item:last-child{    
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.todo-item-text--completed{
+    text-decoration: line-through;
+}
