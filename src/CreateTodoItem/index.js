@@ -1,4 +1,5 @@
 import './CreateTodoItem.css';
+import { FaPlus } from "react-icons/fa";
 import React from 'react';
 
 function CreateTodoItem(props){
@@ -13,10 +14,11 @@ function CreateTodoItem(props){
                 props.setNewTodo(event.target.value)
             }}
         ></input>
-        <button 
+        <button
+            title='Agregar TODO'
             className="todo-item-add"
             onClick={props.onAddTodo}
-        >+</button>
+        > <FaPlus /> </button>
     </li>
     );
 }

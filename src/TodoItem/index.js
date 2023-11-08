@@ -12,18 +12,9 @@ function TodoItem(props){
         onComplete={props.onComplete}
       />
 
-      {/* <span 
-        className={`todo-item-check ${props.completed && "todo-item-check--checked"}`}
-      >V</span> */}
-
       <p 
         className={`todo-item-text ${props.completed && "todo-item-text--completed"}`}
       >{props.text}</p>
-
-      {/* <span 
-        className="todo-item-delete"
-        onClick={props.onDelete}
-      >-</span> */}
 
       <DeleteIcon
         onDelete={props.onDelete}

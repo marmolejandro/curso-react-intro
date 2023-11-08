@@ -6,7 +6,7 @@ function DeleteIcon(props){
     return (
         <TodoIcon
             type="delete"
-            color="#c7493b"
+            color="#af443873"
             onClick={props.onDelete}
         />
     );

@@ -4,30 +4,30 @@
     justify-content: center;
     align-items: center;
     height: 50px;
-    background: #adc8e391;
+    background: #9ab69b;
     margin: 4px 0;
     border-radius: 4px;
-    color: #3f3f3f;
+    color: #222222;
 }
 .todo-item:nth-child(even){
-    background: #ffb47fa8;
+    background: #9ec49b;
 }
 
 .todo-item-completed{
-    background: #adc8e3;
-    box-shadow: 0 0 4px 1px #939393 inset;
-    color: black;
+    background: #acbbac7c;
+    box-shadow: 0 0 1px 1px #cfcfcf inset;
+    color: #646464;
 }
 .todo-item-completed:nth-child(even){
-    background: #ffb57f;
+    background: #badbb888;
 }
 
-.todo-item:hover{
+.todo-item:not(.todo-item-completed):hover{
     box-shadow: 0 0 4px 1px #cacaca;
-    background: #7b9cbd;
+    background: #82a883;
 }
-.todo-item:nth-child(even):hover{
-    background: #df9c6c;
+.todo-item:not(.todo-item-completed):nth-child(even):hover{
+    background: #87bb83;
 }
 
 .todo-item:first-child{

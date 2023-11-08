@@ -3,8 +3,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
-    font-weight: bold;
 }
 
 .icon-container-check{
@@ -21,9 +19,14 @@
     width: 18px;
     height: 18px;
 }
+
+.icon-container-delete .icon-svg{
+    width: 14px;
+    height: 14px;
+}
 .icon-container-delete:hover .icon-svg{
     fill: #af4438;
 }
 .icon-container-check:hover .icon-svg{
-    fill: rgb(14, 90, 14);
+    fill: rgb(16, 102, 16);
 }

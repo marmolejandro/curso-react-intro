@@ -5,13 +5,41 @@ import { useLocalStorage } from './useLocalStorage'
 function App() {
 
   // Estados
-  const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
+  // const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
+  const {
+    item: todos, 
+    saveItem: saveTodos,
+    loading,
+    error
+  } = useLocalStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
   const [newTodo, setNewTodo] = React.useState('');
 
   // Estados derivados
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
+
+  // console.log('Log 1')
+  
+  // Se ejecuta en cada llamado al final ---------------------
+  // React.useEffect(() => {
+  //   console.log('Looog 2')
+  // });
+  // ---------------------------------------------------------
+
+  // Se ejecuta solo en el primer llamado al final -----------
+  // React.useEffect(() => {
+  //   console.log('Looog 2')
+  // }, []);
+  // ---------------------------------------------------------
+
+  // Se ejecuta cada que cambie el estado 'totalTodos' -------
+  // React.useEffect(() => {
+  //   console.log('Looog 2')
+  // }, [totalTodos]);
+  // ---------------------------------------------------------
+
+  // console.log('Log 3')
   
   const searchedTodos = todos.filter((todo) => {
     const todoText = todo.text.toLowerCase();
@@ -63,6 +91,8 @@ function App() {
 
   return(
     <AppUI
+      loading={loading}
+      error={error}
       completedTodos={completedTodos}
       totalTodos={totalTodos}
       searchValue={searchValue}

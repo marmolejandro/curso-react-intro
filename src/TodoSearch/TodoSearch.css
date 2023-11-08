@@ -1,16 +1,30 @@
-.todo-search{
+.container-search{
+    position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+}
+
+.todo-search{
     height: 30px;
     width: calc(50vw);
     background: #f1f1f1;
     margin: 0 auto;
-    padding: 0 6px;
+    padding: 0 12px;
     border: 1px dotted #797979;
-    border-radius: 5px;
+    border-radius: 16px;
     color: #424242;
 }
 
 .todo-search:focus{
     outline-color: #3891e3;
+}
+
+.icon-search{
+    position: absolute;
+    right: 12px;
+    color: gray;
+
 }

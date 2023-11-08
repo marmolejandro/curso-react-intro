@@ -3,10 +3,15 @@ import { TodoCounter } from '../TodoCounter';
 import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
+import { TodosLoading } from '../TodosLoading';
+import { TodosError } from '../TodosError';
+import { EmptyTodos } from '../EmptyTodos';
 import { CreateTodoItem } from '../CreateTodoItem/index';
 
 function AppUI({
     // Props explicitos
+    loading,
+    error,
     completedTodos,
     totalTodos,
     searchValue,
@@ -30,23 +35,27 @@ function AppUI({
             />
 
             <TodoList>
-            <CreateTodoItem
-                newTodo={newTodo}
-                setNewTodo={setNewTodo}
-                onAddTodo={() => {newTodo.length > 0 && addTodo(newTodo)}}
-            />
+                <CreateTodoItem
+                    newTodo={newTodo}
+                    setNewTodo={setNewTodo}
+                    onAddTodo={() => {newTodo.length > 0 && addTodo(newTodo)}}
+                />
             </TodoList>
 
             <TodoList>
-            {searchedTodos.map(todo => (
-                <TodoItem 
-                key={todo.text} 
-                text={todo.text} 
-                completed={todo.completed}
-                onComplete={() => {completeTodo(todo.text)}}
-                onDelete={() => {deleteTodo(todo.text)}}
-                />
-            ))}
+                {loading && <TodosLoading />}
+                {error && <TodosError />}
+                {(!loading && searchedTodos.length === 0)  && <EmptyTodos />}
+
+                {searchedTodos.map(todo => (
+                    <TodoItem 
+                    key={todo.text} 
+                    text={todo.text} 
+                    completed={todo.completed}
+                    onComplete={() => {completeTodo(todo.text)}}
+                    onDelete={() => {deleteTodo(todo.text)}}
+                    />
+                ))}
             </TodoList>
         </>
         );
