@@ -2,16 +2,23 @@
 import './TodoSearch.css';
 import { FaSistrix } from "react-icons/fa";
 import React from 'react';
+import { TodoContext } from '../TodoContext';
 
 function TodoSearch(props){
-    return (
+  
+  const {
+    searchValue,
+    setSearchValue
+  } = React.useContext(TodoContext);
+
+  return (
       <div className='container-search'>
         <input 
           placeholder="Buscar..."
           className="todo-search"
-          value={props.searchValue}
+          value={searchValue}
           onChange={(event) => {
-            props.setSearchValue(event.target.value);
+            setSearchValue(event.target.value);
           }}
         />
 
@@ -20,6 +27,6 @@ function TodoSearch(props){
         />
       </div>
     );
-  }
+}
 
 export {TodoSearch};

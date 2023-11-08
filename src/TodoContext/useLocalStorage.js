@@ -8,7 +8,23 @@ function useLocalStorage(itemName, initialValue){
     const [loading, setLoading] = React.useState(true);
     const [error, setError] = React.useState(false);
 
+    // Se ejecuta en cada llamado al final ---------------------
+    // React.useEffect(() => {
+    //   console.log('Looog 2')
+    // });
+    // ---------------------------------------------------------
 
+    // Se ejecuta solo en el primer llamado al final -----------
+    // React.useEffect(() => {
+    //   console.log('Looog 2')
+    // }, []);
+    // ---------------------------------------------------------
+
+    // Se ejecuta cada que cambie el estado 'totalTodos' -------
+    // React.useEffect(() => {
+    //   console.log('Looog 2')
+    // }, [totalTodos]);
+    // ---------------------------------------------------------
     React.useEffect(() => {
       setTimeout(() => {
         try{
