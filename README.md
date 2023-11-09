@@ -4,10 +4,11 @@ este consiste en un gestor de tareas, en donde se permitiera crearlas, completar
 se implementaron dos modalidades de entrada para crear una tarea, directamente desde el home page o desde un formulario en un modal.
 
 En este se implementaron diversas tecnicas como:
-- Manejo de estados locales con React Hooks
-- Manejo de estados globales con React Context
-- Manejo de Portales de React
-- Uso de almacenamiento local
+- Manejo de estados locales con React Hooks.
+- Manejo de estados globales con React Context (Para evitar el prop drilling).
+- Manejo de Portales de React para transportar componentes.
+- Manejo de efectos para controlar estados de carga y error.
+- Persistencia de datos haciendo uso del almacenamiento local.
 
 ## Deploy en GitHub:
 https://marmolejandro.github.io/curso-react-intro/
