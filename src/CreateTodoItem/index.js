@@ -14,7 +14,8 @@ function CreateTodoItem(){
 
     // Funcion
     const onClick = () => {
-        addTodo(newTodo)
+        const todoSaved = addTodo(newTodo);
+        todoSaved && setNewTodo('');
     };
 
     // Funcion

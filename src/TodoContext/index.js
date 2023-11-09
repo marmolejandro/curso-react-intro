@@ -47,7 +47,8 @@ function TodoProvider({
         }
         newTodos.push(newTodo);
         saveTodos(newTodos);
-        return openModal && !openModal;
+
+        return !openModal;
       }
       else{
         alert('¡TODO ya existe!')
