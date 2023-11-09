@@ -31,11 +31,11 @@
     height: 24px;
     width: 24px;
     color: aliceblue;
-    background: rgb(63 149 85);
+    background: rgb(97, 171, 173);
     border-radius: 0px 6px 6px 0px;
     border: none;
 }
 .todo-item-add:hover{
-    background: rgb(45, 105, 60);
+    background: rgb(88, 144, 146);
     cursor: pointer;
 }

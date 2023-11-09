@@ -6,10 +6,21 @@ import { TodoContext } from '../TodoContext';
 function CreateTodoItem(){
 
     const {
-        newTodo,
-        setNewTodo,
         addTodo,
     } = React.useContext(TodoContext);
+
+    //Estado
+    const [newTodo, setNewTodo] = React.useState('')
+
+    // Funcion
+    const onClick = () => {
+        addTodo(newTodo)
+    };
+
+    // Funcion
+    const onChange = (event) => {
+        setNewTodo(event.target.value);
+    };
 
     return (
     <>
@@ -18,14 +29,12 @@ function CreateTodoItem(){
                 className='input-create-todo' 
                 placeholder='Nuevo TODO'
                 value={newTodo}
-                onChange={(event) => {
-                    setNewTodo(event.target.value)
-                }}
+                onChange={onChange}
             ></input>
             <button
                 title='Agregar TODO'
                 className="todo-item-add"
-                onClick={() => {newTodo.length > 0 && addTodo(newTodo)}}
+                onClick={onClick}
             > <FaPlus /> </button>
         </div>
     </>

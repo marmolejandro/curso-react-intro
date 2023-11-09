@@ -16,7 +16,6 @@ function TodoProvider({
     error
   } = useLocalStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
-  const [newTodo, setNewTodo] = React.useState('');
   const [openModal, setOpenModal] = React.useState(false);
 
   // Estados derivados
@@ -32,24 +31,33 @@ function TodoProvider({
   
   // Funcion
   const addTodo = (text) => {
-    const newTodos = [...todos];// Clonar array
-    const todoIndex = newTodos.findIndex(
-      todo => todo.text === text
-    )
 
-    if(todoIndex === -1){
-      const newTodo = {
-        text: text,
-        completed: false
+    if(text.length > 0){
+
+      const newTodos = [...todos];// Clonar array
+      const todoIndex = newTodos.findIndex(
+        todo => todo.text === text
+      )
+  
+      if(todoIndex === -1){
+  
+        const newTodo = {
+          text: text,
+          completed: false
+        }
+        newTodos.push(newTodo);
+        saveTodos(newTodos);
+        return openModal && !openModal;
       }
-      newTodos.push(newTodo);
-      saveTodos(newTodos);
+      else{
+        alert('¡TODO ya existe!')
+      }
     }
     else{
-      alert('TODO ya existe!')
+      alert('El TODO está vacío')
     }
-
-    setNewTodo('');
+    
+    return  openModal;
   }
 
   // Funcion
@@ -83,9 +91,6 @@ function TodoProvider({
             searchValue,
             setSearchValue,
             searchedTodos,
-
-            newTodo,
-            setNewTodo,
 
             addTodo,
             completeTodo,
